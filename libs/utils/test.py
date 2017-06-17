@@ -77,7 +77,7 @@ class LisaTest(unittest.TestCase):
         return cls.experiments_conf
 
     @classmethod
-    def runExperiments(cls):
+    def runExperiments(cls,extra,extra2):
         """
         Set up logging and trigger running experiments
         """
