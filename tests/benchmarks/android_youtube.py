@@ -18,7 +18,7 @@ class YouTubeTest(LisaBenchmark):
 
         # Define devlib modules to load
         "modules"     : [
-            'cpufreq',
+            'cpufreq','cpuidle'
         ],
 
         # FTrace events to collect for all the tests configuration which have
@@ -61,7 +61,7 @@ class YouTubeTest(LisaBenchmark):
     bm_name = 'YouTube'
 
     # Default products to be collected
-    bm_collect = 'ftrace energy'
+    bm_collect = 'ftrace'
 
     def benchmarkInit(self):
         self.setupWorkload()
@@ -143,12 +143,8 @@ class YouTubeTest(LisaBenchmark):
 video_duration_s = 60
 
 governors = [
-    'performance',
-    'ondemand',
-    'interactive',
     'sched',
     'schedutil',
-    'powersave',
 ]
 
 video_urls = [
