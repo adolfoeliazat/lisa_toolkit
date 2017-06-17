@@ -154,25 +154,25 @@ class EnergyModelNode(_CpuTree):
         if active_states:
             # Sanity check for active_states's frequencies
             freqs = active_states.keys()
-            if not is_monotonic(freqs):
-                raise ValueError(
-                    'Active states frequencies are expected to be '
-                    'monotonically increasing. Freqs: {}'.format(freqs))
+            #if not is_monotonic(freqs):
+            #    raise ValueError(
+            #        'Active states frequencies are expected to be '
+            #        'monotonically increasing. Freqs: {}'.format(freqs))
 
             # Sanity check for active_states's powers
             power_vals = [s.power for s in active_states.values()]
-            if not is_monotonic(power_vals):
-                raise ValueError(
-                    'Active states powers are expected to be '
-                    'monotonically increasing. Values: {}'.format(power_vals))
+            #if not is_monotonic(power_vals):
+            #    raise ValueError(
+            #        'Active states powers are expected to be '
+            #        'monotonically increasing. Values: {}'.format(power_vals))
 
         # Sanity check for idle_states powers
         if idle_states:
             power_vals = idle_states.values()
-            if not is_monotonic(power_vals, decreasing=True):
-                raise ValueError(
-                    'Idle states powers are expected to be '
-                    'monotonically decreasing. Values: {}'.format(power_vals))
+            #if not is_monotonic(power_vals, decreasing=True):
+            #    raise ValueError(
+            #        'Idle states powers are expected to be '
+            #        'monotonically decreasing. Values: {}'.format(power_vals))
 
         if cpu is not None and not name:
             name = 'cpu' + str(cpu)
